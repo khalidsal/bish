@@ -14,12 +14,12 @@
 
   @media (--viewportMedium) {
     flex-direction: row;
-    margin-top: 333px;
+    margin-top: 33px;
   }
 }
 
 .searchLink {
-  width: 100%;
+  width: 10%;
   margin-top: 25px;
 
   /* Remove link's hover effect */
