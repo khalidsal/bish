@@ -19,8 +19,8 @@
 }
 
 .searchLink {
-  width: 10%;
-  margin-top: 25px;
+  width: 100%;
+  margin-top: 250px;
 
   /* Remove link's hover effect */
   &:hover {
