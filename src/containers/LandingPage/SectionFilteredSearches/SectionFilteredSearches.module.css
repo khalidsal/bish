@@ -19,7 +19,7 @@
 }
 
 .searchLink {
-  width: 50%;
+  width: 100%;
   margin-top: 25px;
 
   /* Remove link's hover effect */
@@ -43,7 +43,7 @@
 /* A wrapper for a responsive image that holds it's aspect ratio */
 .imageWrapper {
   position: relative;
-  width: 100%;
+  width: 50%;
   border-radius: 4px;
   transition: var(--transitionStyleButton);
 
@@ -58,7 +58,7 @@
   padding-bottom: calc(6 / 13 * 100%); /* 13:6 Aspect Ratio */
 
   @media (--viewportMedium) {
-    padding-bottom: calc(3 / 2 * 100%); /* 3:2 Aspect Ratio */
+    padding-bottom: calc(3 / 2 * 50%); /* 3:2 Aspect Ratio */
   }
 }
 
