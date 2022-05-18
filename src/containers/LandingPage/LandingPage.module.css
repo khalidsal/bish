@@ -105,7 +105,7 @@
   background: var(--marketplaceColor);
   content: '';
   display: block;
-  width: 10px;
+  width: 109px;
   height: 6px;
 
   /* Place the bar on top of .sectionContent top margin */
@@ -113,7 +113,7 @@
   top: calc(-1 * var(--LandingPage_sectionMarginTop));
 
   @media (--viewportMedium) {
-    width: 192px;
+    width: 19px;
     height: 8px;
     top: calc(-1 * var(--LandingPage_sectionMarginTopMedium));
   }
