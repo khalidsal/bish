@@ -113,8 +113,8 @@
   top: calc(-1 * var(--LandingPage_sectionMarginTop));
 
   @media (--viewportMedium) {
-    width: 677px;
-    height: 8px;
+    width: 900px;
+    height: 4px;
     top: calc(-1 * var(--LandingPage_sectionMarginTopMedium));
   }
 
