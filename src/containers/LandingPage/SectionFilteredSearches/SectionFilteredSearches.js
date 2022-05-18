@@ -66,17 +66,17 @@ const SectionFilteredSearches = props => {
       </div>
       <div className={css.filteredSearches}>
         <FilterLink
-          name="Nikes"
+          name="Edenrobe"
           image={imageForFilter1}
           link="http://localhost:3000/s?pub_brand=nike"
         />
         <FilterLink
-          name="Yeezys"
+          name="Sobia Nazir"
           image={imageForFilter2}
           link="http://localhost:3000/s?pub_brand=yeezy"
         />
         <FilterLink
-          name="Converses"
+          name="Motifz"
           image={imageForFilter3}
           link="http://localhost:3000/s?pub_brand=converse"
         />
