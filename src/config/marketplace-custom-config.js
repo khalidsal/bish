@@ -35,8 +35,8 @@
 
 export const filters = [
   {
-    id: 'condition',
-    label: 'Condition',
+    id: 'category',
+    label: 'Category',
     type: 'SelectSingleFilter',
     group: 'primary',
     queryParamNames: ['pub_category'],
