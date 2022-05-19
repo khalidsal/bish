@@ -89,7 +89,7 @@ const EditListingDetailsFormComponent = props => (
       const submitInProgress = updateInProgress;
       const submitDisabled = invalid || disabled || submitInProgress;
 
-      const categoryConfig = findConfigForSelectFilter('category', filterConfig);
+      const categoryConfig = findConfigForSelectFilter('bob', filterConfig);
       const categorySchemaType = categoryConfig.schemaType;
       const categories = categoryConfig.options ? categoryConfig.options : [];
       const categoryLabel = intl.formatMessage({
