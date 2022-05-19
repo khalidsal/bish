@@ -35,7 +35,7 @@
 
 export const filters = [
   {
-    id: 'category',
+    id: 'bob',
     label: 'Category',
     type: 'SelectSingleFilter',
     group: 'primary',
