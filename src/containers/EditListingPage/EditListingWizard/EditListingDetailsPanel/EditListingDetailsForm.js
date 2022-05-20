@@ -165,7 +165,7 @@ const EditListingDetailsFormComponent = props => (
           <CustomFieldEnum
             id="category"
             name="category"
-            options={categories}
+            options={condition}
             label={categoryLabel}
             placeholder={categoryPlaceholder}
             validate={categoryRequired}
