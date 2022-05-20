@@ -167,7 +167,7 @@
   "EditListingDetailsForm.brandLabel": "Brand",
   "EditListingDetailsForm.brandPlaceholder": "Choose…",
   "EditListingDetailsForm.brandRequired": "You need to select a brand.",
-  "EditListingDetailsForm.categoryLabel": "Category",
+  "EditListingDetailsForm.categoryLabel": "Condition",
   "EditListingDetailsForm.categoryPlaceholder": "Choose…",
   "EditListingDetailsForm.categoryRequired": "You need to select a category.",
   "EditListingDetailsForm.createListingDraftError": "Failed to create a draft listing. Please try again.",
