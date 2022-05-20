@@ -36,7 +36,7 @@
 export const filters = [
   {
     id: 'bob',
-    label: 'Category',
+    label: 'Condition',
     type: 'SelectSingleFilter',
     group: 'primary',
     queryParamNames: ['pub_category'],
@@ -49,9 +49,10 @@ export const filters = [
       // Note: label is not added through the translation files
       // to make filter customizations a bit easier.
       options: [
-        { key: 'men', label: 'Men' },
-        { key: 'women', label: 'Women' },
-        { key: 'kids', label: 'Kids' },
+        { key: 'New - Unused', label: 'New - Unused' },
+        { key: 'Used - Excellent Condition', label: 'Used - Excellent Condition' },
+        { key: 'Used - Good Condition', label: 'Used - Good Condition' },
+        { key: 'Used - Poor Condition', label: 'Used - Poor Condition' },
       ],
     },
   },
