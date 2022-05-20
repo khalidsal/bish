@@ -91,7 +91,7 @@ const EditListingDetailsFormComponent = props => (
 
       const categoryConfig = findConfigForSelectFilter('bob', filterConfig);
       const categorySchemaType = categoryConfig.schemaType;
-      const categories = categoryConfig.options ? categoryConfig.options : [];
+      const condition = categoryConfig.options ? categoryConfig.options : [];
       const categoryLabel = intl.formatMessage({
         id: 'EditListingDetailsForm.categoryLabel',
       });
