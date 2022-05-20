@@ -39,7 +39,7 @@ export const filters = [
     label: 'Condition',
     type: 'SelectSingleFilter',
     group: 'primary',
-    queryParamNames: ['pub_condition'],
+    queryParamNames: ['pub_category'],
     config: {
       // Schema type is enum for SelectSingleFilter
       schemaType: 'enum',
