@@ -180,7 +180,7 @@
   "EditListingDetailsForm.sizePlaceholder": "Choose…",
   "EditListingDetailsForm.sizeRequired": "You need to select a size.",
   "EditListingDetailsForm.title": "Title",
-  "EditListingDetailsForm.titlePlaceholder": "Which sneakers are you selling?",
+  "EditListingDetailsForm.titlePlaceholder": "What are you selling?",
   "EditListingDetailsForm.titleRequired": "You need to add a name.",
   "EditListingDetailsForm.updateFailed": "Failed to update listing. Please try again.",
   "EditListingDetailsPanel.createListingTitle": "Sell your Sneaker",
