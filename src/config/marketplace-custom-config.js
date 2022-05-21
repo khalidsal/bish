@@ -109,7 +109,7 @@ export const filters = [
         { key: 'converse', label: 'Converse' },
         { key: 'new_balance', label: 'New Balance' },
         { key: 'nike', label: 'Nike' },
-        { key: 'puma', label: 'Puma' },
+        { key: 'asda', label: 'Asda' },
         { key: 'ultraboost', label: 'Ultraboost' },
         { key: 'vans', label: 'Vans' },
         { key: 'yeezy', label: 'Yeezy' },
