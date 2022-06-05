@@ -48,7 +48,7 @@ class EditListingDeliveryPanel extends Component {
     const deliveryOptions = [];
 
     if (shippingEnabled) {
-      deliveryOptions.push('shipping');
+      deliveryOptions.push('shippin');
     }
     if (pickupEnabled) {
       deliveryOptions.push('pickup');
