@@ -153,6 +153,7 @@
   "EditListingDeliveryForm.buildingPlaceholder": "A 42",
   "EditListingDeliveryForm.optionalText": "• optional",
   "EditListingDeliveryForm.pickupLabel": "Pickup",
+  "EditListingDeliveryForm.internationalLabel": "International",
   "EditListingDeliveryForm.shippingAdditionalItemsLabel": "Shipping fee for additional items",
   "EditListingDeliveryForm.shippingAdditionalItemsPlaceholder": "Set the fee for additional items",
   "EditListingDeliveryForm.shippingAdditionalItemsRequired": "Shipping fee for additional items required",
