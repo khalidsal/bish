@@ -44,6 +44,7 @@ class EditListingDeliveryPanel extends Component {
       pickupEnabled,
       shippingPriceInSubunitsOneItem,
       shippingPriceInSubunitsAdditionalItems,
+      internationalEnabled,
     } = publicData;
     const deliveryOptions = [];
 
@@ -53,7 +54,9 @@ class EditListingDeliveryPanel extends Component {
     if (pickupEnabled) {
       deliveryOptions.push('pickup');
     }
-
+    if (internationalEnabled) {
+      deliveryOptions.push('international')
+    }
     const currency = price?.currency || config.currency;
     const shippingOneItemAsMoney = shippingPriceInSubunitsOneItem
       ? new Money(shippingPriceInSubunitsOneItem, currency)
@@ -121,6 +124,7 @@ class EditListingDeliveryPanel extends Component {
 
             const shippingEnabled = deliveryOptions.includes('shipping');
             const pickupEnabled = deliveryOptions.includes('pickup');
+            const internationalEnabled = deliveryOptions.includes('international');
             const address = location?.selectedPlace?.address || null;
             const origin = location?.selectedPlace?.origin || null;
 
@@ -129,6 +133,9 @@ class EditListingDeliveryPanel extends Component {
 
             const shippingDataMaybe =
               shippingEnabled && shippingPriceInSubunitsOneItem
+            
+            const internationalDataMaybe =
+                  internationalEnabled
                 ? {
                     // Note: we only save the "amount" because currency should not differ from listing's price.
                     // Money is always dealt in subunits (e.g. cents) to avoid float calculations.
@@ -145,6 +152,8 @@ class EditListingDeliveryPanel extends Component {
                 ...pickupDataMaybe,
                 shippingEnabled,
                 ...shippingDataMaybe,
+                internationalEnabled,
+                ...internationalDataMaybe,
               },
             };
             this.setState({
