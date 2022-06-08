@@ -250,7 +250,8 @@ export const EditListingDeliveryFormComponent = props => (
             name="deliveryOptions"
             label={shippingLabel}
             value="shipping"
-          />
+            
+            />
           </div> 
               
           <Button
