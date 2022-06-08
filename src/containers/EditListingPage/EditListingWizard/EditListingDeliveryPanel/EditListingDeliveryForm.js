@@ -249,9 +249,8 @@ export const EditListingDeliveryFormComponent = props => (
             className={css.deliveryCheckbox}
             name="deliveryOptions"
             label={shippingLabel}
-            value="shipping"
-            
-            />
+            value="shipping" 
+          />
           </div> 
               
           <Button
