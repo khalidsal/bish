@@ -243,7 +243,7 @@ export const EditListingDeliveryFormComponent = props => (
               // See example: https://codesandbox.io/s/changing-field-level-validators-zc8ei
               key={shippingEnabled ? 'additionalItemsValidation' : 'noAdditionalItemsValidation'}
             />
-          </div>
+          
             <FieldCheckbox
               id="shipping"
               className={css.deliveryCheckbox}
