@@ -245,15 +245,57 @@ export const EditListingDeliveryFormComponent = props => (
             />
           </div>
           <FieldCheckbox
-            id="shipping"
+            id="pickup"
             className={css.deliveryCheckbox}
             name="deliveryOptions"
-            label={shippingLabel}
-            value="shipping" 
-           />
-          
-          </div> 
-              
+            label={pickupLabel}
+            value="pickup"
+          />
+          <div className={pickupClasses}>
+            {errorMessage}
+            {errorMessageShowListing}
+            <LocationAutocompleteInputField
+              disabled={!pickupEnabled}
+              className={css.input}
+              inputClassName={css.locationAutocompleteInput}
+              iconClassName={css.locationAutocompleteInputIcon}
+              predictionsClassName={css.predictionsRoot}
+              validClassName={css.validLocation}
+              autoFocus={autoFocus}
+              name="location"
+              label={titleRequiredMessage}
+              placeholder={addressPlaceholderMessage}
+              useDefaultPredictions={false}
+              format={identity}
+              valueFromForm={values.location}
+              validate={
+                pickupEnabled
+                  ? composeValidators(
+                      autocompleteSearchRequired(addressRequiredMessage),
+                      autocompletePlaceSelected(addressNotRecognizedMessage)
+                    )
+                  : () => {}
+              }
+              hideErrorMessage={!pickupEnabled}
+              // Whatever parameters are being used to calculate
+              // the validation function need to be combined in such
+              // a way that, when they change, this key prop
+              // changes, thus reregistering this field (and its
+              // validation function) with Final Form.
+              // See example: https://codesandbox.io/s/changing-field-level-validators-zc8ei
+              key={pickupEnabled ? 'locationValidation' : 'noLocationValidation'}
+            />
+
+            <FieldTextInput
+              className={css.input}
+              type="text"
+              name="building"
+              id="building"
+              label={buildingMessage}
+              placeholder={buildingPlaceholderMessage}
+              disabled={!pickupEnabled}
+          </div>
+  
           <Button
             className={css.submitButton}
             type="submit"
