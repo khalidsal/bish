@@ -294,6 +294,7 @@ export const EditListingDeliveryFormComponent = props => (
               label={buildingMessage}
               placeholder={buildingPlaceholderMessage}
               disabled={!pickupEnabled}
+            />
           </div>
   
           <Button
