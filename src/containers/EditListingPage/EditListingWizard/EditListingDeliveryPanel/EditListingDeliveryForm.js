@@ -172,6 +172,7 @@ export const EditListingDeliveryFormComponent = props => (
               placeholder={buildingPlaceholderMessage}
               disabled={!pickupEnabled}
             />
+         
           </div>
           <FieldCheckbox
             id="shipping"
@@ -180,6 +181,8 @@ export const EditListingDeliveryFormComponent = props => (
             label={shippingLabel}
             value="shipping"
           />
+            />
+
           </div>
           <FieldCheckbox
             id="shipping"
