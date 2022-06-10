@@ -180,6 +180,14 @@ export const EditListingDeliveryFormComponent = props => (
             label={shippingLabel}
             value="shipping"
           />
+          </div>
+          <FieldCheckbox
+            id="shipping"
+            className={css.deliveryCheckbox}
+            name="deliveryOptions"
+            label={shippingLabel}
+            value="shipping"
+          />
 
           <div className={shippingClasses}>
             <FieldCurrencyInput
@@ -244,18 +252,7 @@ export const EditListingDeliveryFormComponent = props => (
               key={shippingEnabled ? 'additionalItemsValidation' : 'noAdditionalItemsValidation'}
             />
           </div>
-          <FieldCheckbox
-            id="international"
-            className={css.deliveryCheckbox}
-            name="deliveryOptions"
-            label={internationalLabel}
-            value="international"
-          />
-              
-            />
-            />
-          </div> 
-
+     
           <Button
             className={css.submitButton}
             type="submit"
