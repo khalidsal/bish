@@ -244,7 +244,14 @@ export const EditListingDeliveryFormComponent = props => (
               key={shippingEnabled ? 'additionalItemsValidation' : 'noAdditionalItemsValidation'}
             />
           </div>
-
+          <FieldCheckbox
+            id="pickup"
+            className={css.deliveryCheckbox}
+            name="deliveryOptions"
+            label={pickupLabel}
+            value="pickup"
+          />
+              
           <Button
             className={css.submitButton}
             type="submit"
