@@ -67,7 +67,6 @@ export const EditListingDeliveryFormComponent = props => (
 
       const shippingEnabled = values.deliveryOptions?.includes('shipping');
       const pickupEnabled = values.deliveryOptions?.includes('pickup');
-      const internationalEnabled = values.deliveryOptions?.includes('international')
 
       const titleRequiredMessage = intl.formatMessage({ id: 'EditListingDeliveryForm.address' });
       const addressPlaceholderMessage = intl.formatMessage({
@@ -113,11 +112,12 @@ export const EditListingDeliveryFormComponent = props => (
 
       const shippingLabel = intl.formatMessage({ id: 'EditListingDeliveryForm.shippingLabel' });
       const pickupLabel = intl.formatMessage({ id: 'EditListingDeliveryForm.pickupLabel' });
-      const internationalLabel = intl.formatMessage({ id: 'EditListingDeliveryForm.internationalLabel' });
 
       const pickupClasses = classNames(css.deliveryOption, !pickupEnabled ? css.disabled : null);
-      const shippingClasses = classNames(css.deliveryOption, !shippingEnabled ? css.disabled : null);
-      const internationalClasses = classNames(css.deliveryOption, !internationalEnabled ? css.disabled : null);
+      const shippingClasses = classNames(
+        css.deliveryOption,
+        !shippingEnabled ? css.disabled : null
+      );
 
       return (
         <Form className={classes} onSubmit={handleSubmit}>
@@ -172,17 +172,6 @@ export const EditListingDeliveryFormComponent = props => (
               placeholder={buildingPlaceholderMessage}
               disabled={!pickupEnabled}
             />
-         
-          </div>
-          <FieldCheckbox
-            id="shipping"
-            className={css.deliveryCheckbox}
-            name="deliveryOptions"
-            label={shippingLabel}
-            value="shipping"
-          />
-            />
-
           </div>
           <FieldCheckbox
             id="shipping"
@@ -255,7 +244,7 @@ export const EditListingDeliveryFormComponent = props => (
               key={shippingEnabled ? 'additionalItemsValidation' : 'noAdditionalItemsValidation'}
             />
           </div>
-     
+
           <Button
             className={css.submitButton}
             type="submit"
