@@ -135,8 +135,7 @@ class EditListingDeliveryPanel extends Component {
                     // Note: we only save the "amount" because currency should not differ from listing's price.
                     // Money is always dealt in subunits (e.g. cents) to avoid float calculations.
                     shippingPriceInSubunitsOneItem: shippingPriceInSubunitsOneItem.amount,
-                    shippingPriceInSubunitsAdditionalItems:
-                      shippingPriceInSubunitsAdditionalItems?.amount,
+               
                   }
                 : {};
 
