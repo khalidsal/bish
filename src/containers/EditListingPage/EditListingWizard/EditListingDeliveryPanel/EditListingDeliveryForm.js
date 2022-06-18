@@ -162,16 +162,7 @@ export const EditListingDeliveryFormComponent = props => (
               // See example: https://codesandbox.io/s/changing-field-level-validators-zc8ei
               key={pickupEnabled ? 'locationValidation' : 'noLocationValidation'}
             />
-
-            <FieldTextInput
-              className={css.input}
-              type="text"
-              name="building"
-              id="building"
-              label={buildingMessage}
-              placeholder={buildingPlaceholderMessage}
-              disabled={!pickupEnabled}
-            />
+       
           </div>
           <FieldCheckbox
             id="shipping"
