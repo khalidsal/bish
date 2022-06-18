@@ -42,8 +42,7 @@ class EditListingDeliveryPanel extends Component {
     const {
       shippingEnabled,
       pickupEnabled,
-      shippingPriceInSubunitsOneItem,
-      shippingPriceInSubunitsAdditionalItems,
+      shippingPriceInSubunitsOneItem,      
       internationalEnabled,
     } = publicData;
     const deliveryOptions = [];
