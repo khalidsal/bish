@@ -203,37 +203,7 @@ export const EditListingDeliveryFormComponent = props => (
               // See example: https://codesandbox.io/s/changing-field-level-validators-zc8ei
               key={shippingEnabled ? 'oneItemValidation' : 'noOneItemValidation'}
             />
-
-            <FieldCurrencyInput
-              id="shippingPriceInSubunitsAdditionalItems"
-              name="shippingPriceInSubunitsAdditionalItems"
-              className={css.input}
-              label={intl.formatMessage({
-                id: 'EditListingDeliveryForm.shippingAdditionalItemsLabel',
-              })}
-              placeholder={intl.formatMessage({
-                id: 'EditListingDeliveryForm.shippingAdditionalItemsPlaceholder',
-              })}
-              currencyConfig={config.currencyConfig}
-              disabled={!shippingEnabled}
-              validate={
-                shippingEnabled
-                  ? required(
-                      intl.formatMessage({
-                        id: 'EditListingDeliveryForm.shippingAdditionalItemsRequired',
-                      })
-                    )
-                  : null
-              }
-              hideErrorMessage={!shippingEnabled}
-              // Whatever parameters are being used to calculate
-              // the validation function need to be combined in such
-              // a way that, when they change, this key prop
-              // changes, thus reregistering this field (and its
-              // validation function) with Final Form.
-              // See example: https://codesandbox.io/s/changing-field-level-validators-zc8ei
-              key={shippingEnabled ? 'additionalItemsValidation' : 'noAdditionalItemsValidation'}
-            />
+                
           </div>
 
           <Button
