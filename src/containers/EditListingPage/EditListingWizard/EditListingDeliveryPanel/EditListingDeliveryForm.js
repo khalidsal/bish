@@ -245,11 +245,11 @@ export const EditListingDeliveryFormComponent = props => (
             />
           </div>
           <FieldCheckbox
-            id="pickup"
+            id="international"
             className={css.deliveryCheckbox}
             name="deliveryOptions"
-            label={pickupLabel}
-            value="pickup"
+            label={internationalLabel}
+            value="international"
           />
               
           <Button
