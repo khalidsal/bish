@@ -112,6 +112,7 @@ export const EditListingDeliveryFormComponent = props => (
 
       const shippingLabel = intl.formatMessage({ id: 'EditListingDeliveryForm.shippingLabel' });
       const pickupLabel = intl.formatMessage({ id: 'EditListingDeliveryForm.pickupLabel' });
+      const internationalLabel = intl.formatMessage({ id: 'EditListingDeliveryForm.internationalLabel' });
 
       const pickupClasses = classNames(css.deliveryOption, !pickupEnabled ? css.disabled : null);
       const shippingClasses = classNames(
