@@ -139,7 +139,7 @@ export const EditListingDeliveryFormComponent = props => (
               placeholder={buildingPlaceholderMessage}
               disabled={!pickupEnabled}
             />
-          </div>
+          
           <FieldCheckbox
             id="shipping"
             className={css.deliveryCheckbox}
