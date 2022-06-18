@@ -118,7 +118,6 @@ class EditListingDeliveryPanel extends Component {
               building = '',
               location,
               shippingPriceInSubunitsOneItem,
-              shippingPriceInSubunitsAdditionalItems,
               deliveryOptions,
             } = values;
 
@@ -161,7 +160,6 @@ class EditListingDeliveryPanel extends Component {
                 building,
                 location: { search: address, selectedPlace: { address, origin } },
                 shippingPriceInSubunitsOneItem,
-                shippingPriceInSubunitsAdditionalItems,
                 deliveryOptions,
               },
             });
