@@ -10,8 +10,8 @@ const GENERATED_BOUNDS_DEFAULT_DISTANCE = 500; // meters
 // Distances for generated bounding boxes for different Mapbox place types
 const PLACE_TYPE_BOUNDS_DISTANCES = {
  
-  country: 2000,
-  region: 2000,
+  country: 0,
+  region: 0,
 };
 
 const locationBounds = (latlng, distance) => {
