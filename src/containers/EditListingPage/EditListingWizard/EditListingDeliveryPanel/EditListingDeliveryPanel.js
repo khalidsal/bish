@@ -59,10 +59,7 @@ class EditListingDeliveryPanel extends Component {
     const currency = price?.currency || config.currency;
     const shippingOneItemAsMoney = shippingPriceInSubunitsOneItem
       ? new Money(shippingPriceInSubunitsOneItem, currency)
-      : null;
-    const shippingAdditionalItemsAsMoney = shippingPriceInSubunitsAdditionalItems
-      ? new Money(shippingPriceInSubunitsAdditionalItems, currency)
-      : null;
+      : null;   
     return {
       building,
       location: locationFieldsPresent
@@ -73,7 +70,7 @@ class EditListingDeliveryPanel extends Component {
         : { search: undefined, selectedPlace: undefined },
       deliveryOptions,
       shippingPriceInSubunitsOneItem: shippingOneItemAsMoney,
-      shippingPriceInSubunitsAdditionalItems: shippingAdditionalItemsAsMoney,
+      
     };
   }
 
