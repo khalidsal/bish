@@ -41,7 +41,9 @@ exports.transactionLineItems = (listing, orderData) => {
   const isShipping = deliveryMethod === 'shipping';
   const isPickup = deliveryMethod === 'pickup';
   const shippingPriceInSubunitsOneItem = publicData && publicData.shippingPriceInSubunitsOneItem;
- 
+  const shippingPriceInSubunitsAdditionalItems =
+    publicData && publicData.shippingPriceInSubunitsAdditionalItems;
+
   // stockReservationQuantity is used with stock management
   const hasStockReservationQuantity = orderData && orderData.stockReservationQuantity;
   // quantity is used with bookings (time-based process: e.g. units: hours, quantity: 5)
@@ -96,6 +98,7 @@ exports.transactionLineItems = (listing, orderData) => {
   const shippingFee = isShipping
     ? calculateShippingFee(
         shippingPriceInSubunitsOneItem,
+        shippingPriceInSubunitsAdditionalItems,
         currency,
         orderQuantity
       )
