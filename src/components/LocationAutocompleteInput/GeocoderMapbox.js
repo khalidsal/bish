@@ -9,9 +9,16 @@ export const CURRENT_LOCATION_ID = 'current-location';
 const GENERATED_BOUNDS_DEFAULT_DISTANCE = 500; // meters
 // Distances for generated bounding boxes for different Mapbox place types
 const PLACE_TYPE_BOUNDS_DISTANCES = {
- 
-  country: 0,
-  region: 0,
+  address: 500,
+  country: 2000,
+  region: 2000,
+  postcode: 2000,
+  district: 2000,
+  place: 2000,
+  locality: 2000,
+  neighborhood: 2000,
+  poi: 2000,
+  'poi.landmark': 2000,
 };
 
 const locationBounds = (latlng, distance) => {
