@@ -98,6 +98,7 @@ exports.transactionLineItems = (listing, orderData) => {
   const shippingFee = isShipping
     ? calculateShippingFee(
         shippingPriceInSubunitsOneItem,
+        shippingPriceInSubunitsAdditionalItems,
         currency,
         orderQuantity
       )
