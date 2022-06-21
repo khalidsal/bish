@@ -17,7 +17,6 @@ const LINE_ITEM_DAY = 'line-item/day';
  * €10 + (3 * €5) => €25
  *
  * @param {Money} shippingPriceInSubunitsOneItem
- * @param {Money} shippingPriceInSubunitsAdditionalItems
  * @param {string} currency code
  * @param {int} quantity
  *
@@ -25,7 +24,6 @@ const LINE_ITEM_DAY = 'line-item/day';
  */
 exports.calculateShippingFee = (
   shippingPriceInSubunitsOneItem,
-  shippingPriceInSubunitsAdditionalItems,
   currency,
   quantity
 ) => {
@@ -33,16 +31,10 @@ exports.calculateShippingFee = (
     return new Money(shippingPriceInSubunitsOneItem, currency);
   } else if (
     shippingPriceInSubunitsOneItem &&
-    shippingPriceInSubunitsAdditionalItems &&
     currency &&
     quantity > 1
   ) {
     const oneItemFee = getAmountAsDecimalJS(new Money(shippingPriceInSubunitsOneItem, currency));
-    const additionalItemsFee = getAmountAsDecimalJS(
-      new Money(shippingPriceInSubunitsAdditionalItems, currency)
-    );
-    const additionalItemsTotal = additionalItemsFee.times(quantity - 1);
-    const numericShippingFee = convertDecimalJSToNumber(oneItemFee.plus(additionalItemsTotal));
     return new Money(numericShippingFee, currency);
   }
   return null;
