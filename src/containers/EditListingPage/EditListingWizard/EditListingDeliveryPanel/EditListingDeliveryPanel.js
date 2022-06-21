@@ -42,8 +42,8 @@ class EditListingDeliveryPanel extends Component {
     const {
       shippingEnabled,
       pickupEnabled,
-      shippingPriceInSubunitsOneItem,      
-      internationalEnabled,
+      shippingPriceInSubunitsOneItem,
+      shippingPriceInSubunitsAdditionalItems,
     } = publicData;
     const deliveryOptions = [];
 
@@ -53,13 +53,14 @@ class EditListingDeliveryPanel extends Component {
     if (pickupEnabled) {
       deliveryOptions.push('pickup');
     }
-    if (internationalEnabled) {
-      deliveryOptions.push('international')
-    }
+
     const currency = price?.currency || config.currency;
     const shippingOneItemAsMoney = shippingPriceInSubunitsOneItem
       ? new Money(shippingPriceInSubunitsOneItem, currency)
-      : null;   
+      : null;
+    const shippingAdditionalItemsAsMoney = shippingPriceInSubunitsAdditionalItems
+      ? new Money(shippingPriceInSubunitsAdditionalItems, currency)
+      : null;
     return {
       building,
       location: locationFieldsPresent
@@ -70,7 +71,7 @@ class EditListingDeliveryPanel extends Component {
         : { search: undefined, selectedPlace: undefined },
       deliveryOptions,
       shippingPriceInSubunitsOneItem: shippingOneItemAsMoney,
-      
+      shippingPriceInSubunitsAdditionalItems: shippingAdditionalItemsAsMoney,
     };
   }
 
@@ -114,12 +115,12 @@ class EditListingDeliveryPanel extends Component {
               building = '',
               location,
               shippingPriceInSubunitsOneItem,
+              shippingPriceInSubunitsAdditionalItems,
               deliveryOptions,
             } = values;
 
             const shippingEnabled = deliveryOptions.includes('shipping');
             const pickupEnabled = deliveryOptions.includes('pickup');
-            const internationalEnabled = deliveryOptions.includes('international');
             const address = location?.selectedPlace?.address || null;
             const origin = location?.selectedPlace?.origin || null;
 
@@ -128,14 +129,12 @@ class EditListingDeliveryPanel extends Component {
 
             const shippingDataMaybe =
               shippingEnabled && shippingPriceInSubunitsOneItem
-            
-            const internationalDataMaybe =
-                  internationalEnabled
                 ? {
                     // Note: we only save the "amount" because currency should not differ from listing's price.
                     // Money is always dealt in subunits (e.g. cents) to avoid float calculations.
                     shippingPriceInSubunitsOneItem: shippingPriceInSubunitsOneItem.amount,
-               
+                    shippingPriceInSubunitsAdditionalItems:
+                      shippingPriceInSubunitsAdditionalItems?.amount,
                   }
                 : {};
 
@@ -146,8 +145,6 @@ class EditListingDeliveryPanel extends Component {
                 ...pickupDataMaybe,
                 shippingEnabled,
                 ...shippingDataMaybe,
-                internationalEnabled,
-                ...internationalDataMaybe,
               },
             };
             this.setState({
@@ -155,6 +152,7 @@ class EditListingDeliveryPanel extends Component {
                 building,
                 location: { search: address, selectedPlace: { address, origin } },
                 shippingPriceInSubunitsOneItem,
+                shippingPriceInSubunitsAdditionalItems,
                 deliveryOptions,
               },
             });
