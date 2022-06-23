@@ -157,13 +157,7 @@ export const EditListingDeliveryFormComponent = props => (
             />
            
           </div>
-          <FieldCheckbox
-            id="shipping"
-            className={css.deliveryCheckbox}
-            name="deliveryOptions"
-            label={shippingLabel}
-            value="shipping"
-          />
+     
 
           <div className={shippingClasses}>
             <FieldCurrencyInput
