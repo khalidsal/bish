@@ -121,9 +121,10 @@ export const EditListingDeliveryFormComponent = props => (
 
       return (
         <Form className={classes} onSubmit={handleSubmit}>
-          <FieldCheckbox
+          <FieldTextInput
             id="pickup"
-            className={css.deliveryCheckbox}
+            type="text"
+            className={css.input}
             name="deliveryOptions"
             label={pickupLabel}
             value="pickup"
