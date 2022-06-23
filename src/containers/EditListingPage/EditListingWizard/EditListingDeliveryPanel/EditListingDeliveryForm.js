@@ -125,8 +125,7 @@ export const EditListingDeliveryFormComponent = props => (
           <div className={pickupClasses}>
             {errorMessage}
             {errorMessageShowListing}
-            <LocationAutocompleteInputField
-              disabled={!pickupEnabled}
+            <LocationAutocompleteInputField        
               className={css.input}
               inputClassName={css.locationAutocompleteInput}
               iconClassName={css.locationAutocompleteInputIcon}
