@@ -201,8 +201,7 @@ export const EditListingDeliveryFormComponent = props => (
           <Button
             className={css.submitButton}
             type="submit"
-            inProgress={submitInProgress}
-            disabled={submitDisabled}
+            inProgress={submitInProgress}         
             ready={submitReady}
           >
             {saveActionMsg}
