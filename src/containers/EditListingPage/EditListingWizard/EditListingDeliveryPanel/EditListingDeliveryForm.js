@@ -121,14 +121,7 @@ export const EditListingDeliveryFormComponent = props => (
 
       return (
         <Form className={classes} onSubmit={handleSubmit}>
-          <FieldTextInput
-            id="pickup"
-            type="text"
-            className={css.input}
-            name="deliveryOptions"
-            label={pickupLabel}
-            value="pickup"
-          />
+    
           <div className={pickupClasses}>
             {errorMessage}
             {errorMessageShowListing}
