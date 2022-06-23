@@ -170,8 +170,7 @@ export const EditListingDeliveryFormComponent = props => (
               placeholder={intl.formatMessage({
                 id: 'EditListingDeliveryForm.shippingOneItemPlaceholder',
               })}
-              currencyConfig={config.currencyConfig}
-              disabled={!shippingEnabled}
+              currencyConfig={config.currencyConfig}              
               validate={
                 shippingEnabled
                   ? required(
