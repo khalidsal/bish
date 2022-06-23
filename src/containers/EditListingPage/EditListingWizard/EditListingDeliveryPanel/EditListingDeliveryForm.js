@@ -126,7 +126,7 @@ export const EditListingDeliveryFormComponent = props => (
             {errorMessage}
             {errorMessageShowListing}
             <LocationAutocompleteInputField        
-              className={css.input}
+              className={css.deliveryCheckbox}
               inputClassName={css.locationAutocompleteInput}
               iconClassName={css.locationAutocompleteInputIcon}
               predictionsClassName={css.predictionsRoot}
