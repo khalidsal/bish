@@ -142,9 +142,7 @@ class EditListingDeliveryPanel extends Component {
               geolocation: origin,
               publicData: {
                 pickupEnabled,
-                ...pickupDataMaybe,
                 shippingEnabled,
-                ...shippingDataMaybe,
               },
             };
             this.setState({
