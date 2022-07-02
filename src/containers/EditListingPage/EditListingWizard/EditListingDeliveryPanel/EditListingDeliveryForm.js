@@ -121,12 +121,19 @@ export const EditListingDeliveryFormComponent = props => (
 
       return (
         <Form className={classes} onSubmit={handleSubmit}>
-    
+          <FieldCheckbox
+            id="pickup"
+            className={css.deliveryCheckbox}
+            name="deliveryOptions"
+            label={pickupLabel}
+            value="pickup"
+          />
           <div className={pickupClasses}>
             {errorMessage}
             {errorMessageShowListing}
-            <LocationAutocompleteInputField        
-              className={css.deliveryCheckbox}
+            <LocationAutocompleteInputField
+              disabled={!pickupEnabled}
+              className={css.input}
               inputClassName={css.locationAutocompleteInput}
               iconClassName={css.locationAutocompleteInputIcon}
               predictionsClassName={css.predictionsRoot}
@@ -155,9 +162,24 @@ export const EditListingDeliveryFormComponent = props => (
               // See example: https://codesandbox.io/s/changing-field-level-validators-zc8ei
               key={pickupEnabled ? 'locationValidation' : 'noLocationValidation'}
             />
-           
+
+            <FieldTextInput
+              className={css.input}
+              type="text"
+              name="building"
+              id="building"
+              label={buildingMessage}
+              placeholder={buildingPlaceholderMessage}
+              disabled={!pickupEnabled}
+            />
           </div>
-     
+          <FieldCheckbox
+            id="shipping"
+            className={css.deliveryCheckbox}
+            name="deliveryOptions"
+            label={shippingLabel}
+            value="shipping"
+          />
 
           <div className={shippingClasses}>
             <FieldCurrencyInput
@@ -170,7 +192,8 @@ export const EditListingDeliveryFormComponent = props => (
               placeholder={intl.formatMessage({
                 id: 'EditListingDeliveryForm.shippingOneItemPlaceholder',
               })}
-              currencyConfig={config.currencyConfig}              
+              currencyConfig={config.currencyConfig}
+              disabled={!shippingEnabled}
               validate={
                 shippingEnabled
                   ? required(
@@ -189,19 +212,44 @@ export const EditListingDeliveryFormComponent = props => (
               // See example: https://codesandbox.io/s/changing-field-level-validators-zc8ei
               key={shippingEnabled ? 'oneItemValidation' : 'noOneItemValidation'}
             />
-            <FieldCheckbox
-              id="shipping"
-              className={css.deliveryCheckbox}
-              name="deliveryOptions"
-              label={shippingLabel}
-              value="shipping"
-          />
+
+            <FieldCurrencyInput
+              id="shippingPriceInSubunitsAdditionalItems"
+              name="shippingPriceInSubunitsAdditionalItems"
+              className={css.input}
+              label={intl.formatMessage({
+                id: 'EditListingDeliveryForm.shippingAdditionalItemsLabel',
+              })}
+              placeholder={intl.formatMessage({
+                id: 'EditListingDeliveryForm.shippingAdditionalItemsPlaceholder',
+              })}
+              currencyConfig={config.currencyConfig}
+              disabled={!shippingEnabled}
+              validate={
+                shippingEnabled
+                  ? required(
+                      intl.formatMessage({
+                        id: 'EditListingDeliveryForm.shippingAdditionalItemsRequired',
+                      })
+                    )
+                  : null
+              }
+              hideErrorMessage={!shippingEnabled}
+              // Whatever parameters are being used to calculate
+              // the validation function need to be combined in such
+              // a way that, when they change, this key prop
+              // changes, thus reregistering this field (and its
+              // validation function) with Final Form.
+              // See example: https://codesandbox.io/s/changing-field-level-validators-zc8ei
+              key={shippingEnabled ? 'additionalItemsValidation' : 'noAdditionalItemsValidation'}
+            />
           </div>
 
           <Button
             className={css.submitButton}
             type="submit"
-            inProgress={submitInProgress}         
+            inProgress={submitInProgress}
+            disabled={submitDisabled}
             ready={submitReady}
           >
             {saveActionMsg}
