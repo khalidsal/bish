@@ -122,58 +122,6 @@ export const EditListingDeliveryFormComponent = props => (
       return (
         <Form className={classes} onSubmit={handleSubmit}>
           <FieldCheckbox
-            id="pickup"
-            className={css.deliveryCheckbox}
-            name="deliveryOptions"
-            label={pickupLabel}
-            value="pickup"
-          />
-          <div className={pickupClasses}>
-            {errorMessage}
-            {errorMessageShowListing}
-            <LocationAutocompleteInputField
-              disabled={!pickupEnabled}
-              className={css.input}
-              inputClassName={css.locationAutocompleteInput}
-              iconClassName={css.locationAutocompleteInputIcon}
-              predictionsClassName={css.predictionsRoot}
-              validClassName={css.validLocation}
-              autoFocus={autoFocus}
-              name="location"
-              label={titleRequiredMessage}
-              placeholder={addressPlaceholderMessage}
-              useDefaultPredictions={false}
-              format={identity}
-              valueFromForm={values.location}
-              validate={
-                pickupEnabled
-                  ? composeValidators(
-                      autocompleteSearchRequired(addressRequiredMessage),
-                      autocompletePlaceSelected(addressNotRecognizedMessage)
-                    )
-                  : () => {}
-              }
-              hideErrorMessage={!pickupEnabled}
-              // Whatever parameters are being used to calculate
-              // the validation function need to be combined in such
-              // a way that, when they change, this key prop
-              // changes, thus reregistering this field (and its
-              // validation function) with Final Form.
-              // See example: https://codesandbox.io/s/changing-field-level-validators-zc8ei
-              key={pickupEnabled ? 'locationValidation' : 'noLocationValidation'}
-            />
-
-            <FieldTextInput
-              className={css.input}
-              type="text"
-              name="building"
-              id="building"
-              label={buildingMessage}
-              placeholder={buildingPlaceholderMessage}
-              disabled={!pickupEnabled}
-            />
-          </div>
-          <FieldCheckbox
             id="shipping"
             className={css.deliveryCheckbox}
             name="deliveryOptions"
@@ -213,36 +161,6 @@ export const EditListingDeliveryFormComponent = props => (
               key={shippingEnabled ? 'oneItemValidation' : 'noOneItemValidation'}
             />
 
-            <FieldCurrencyInput
-              id="shippingPriceInSubunitsAdditionalItems"
-              name="shippingPriceInSubunitsAdditionalItems"
-              className={css.input}
-              label={intl.formatMessage({
-                id: 'EditListingDeliveryForm.shippingAdditionalItemsLabel',
-              })}
-              placeholder={intl.formatMessage({
-                id: 'EditListingDeliveryForm.shippingAdditionalItemsPlaceholder',
-              })}
-              currencyConfig={config.currencyConfig}
-              disabled={!shippingEnabled}
-              validate={
-                shippingEnabled
-                  ? required(
-                      intl.formatMessage({
-                        id: 'EditListingDeliveryForm.shippingAdditionalItemsRequired',
-                      })
-                    )
-                  : null
-              }
-              hideErrorMessage={!shippingEnabled}
-              // Whatever parameters are being used to calculate
-              // the validation function need to be combined in such
-              // a way that, when they change, this key prop
-              // changes, thus reregistering this field (and its
-              // validation function) with Final Form.
-              // See example: https://codesandbox.io/s/changing-field-level-validators-zc8ei
-              key={shippingEnabled ? 'additionalItemsValidation' : 'noAdditionalItemsValidation'}
-            />
           </div>
 
           <Button
