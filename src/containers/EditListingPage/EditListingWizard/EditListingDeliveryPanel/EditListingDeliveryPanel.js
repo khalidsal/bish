@@ -141,8 +141,6 @@ class EditListingDeliveryPanel extends Component {
             const updateValues = {
               geolocation: origin,
               publicData: {
-                pickupEnabled,
-                ...pickupDataMaybe,
                 shippingEnabled,
                 ...shippingDataMaybe,
               },
