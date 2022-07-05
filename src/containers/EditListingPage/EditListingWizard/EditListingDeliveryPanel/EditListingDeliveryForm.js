@@ -66,7 +66,7 @@ export const EditListingDeliveryFormComponent = props => (
       useEffect(() => resumeValidation(), [values]);
 
       const shippingEnabled = values.deliveryOptions?.includes('shipping');
-      const pickupEnabled = values.deliveryOptions?.includes('shipping');
+      
 
       const titleRequiredMessage = intl.formatMessage({ id: 'EditListingDeliveryForm.address' });
       const addressPlaceholderMessage = intl.formatMessage({
