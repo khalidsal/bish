@@ -140,7 +140,6 @@ class EditListingDeliveryPanel extends Component {
             this.setState({
               initialValues: {
                 building,
-                location: { search: address, selectedPlace: { address, origin } },
                 shippingPriceInSubunitsOneItem,
                 shippingPriceInSubunitsAdditionalItems,
                 deliveryOptions,
