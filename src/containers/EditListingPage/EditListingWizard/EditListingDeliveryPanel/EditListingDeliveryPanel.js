@@ -118,12 +118,7 @@ class EditListingDeliveryPanel extends Component {
             } = values;
 
             const shippingEnabled = deliveryOptions.includes('shipping');
-            const pickupEnabled = deliveryOptions.includes('pickup');
-            const address = location?.selectedPlace?.address || null;
-            const origin = location?.selectedPlace?.origin || null;
-
-            const pickupDataMaybe =
-              pickupEnabled && address ? { location: { address, building } } : {};
+            
 
             const shippingDataMaybe =
               shippingEnabled && shippingPriceInSubunitsOneItem
