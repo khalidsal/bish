@@ -41,7 +41,6 @@ class EditListingDeliveryPanel extends Component {
     const { address, building } = location;
     const {
       shippingEnabled,
-      pickupEnabled,
       shippingPriceInSubunitsOneItem,
       shippingPriceInSubunitsAdditionalItems,
     } = publicData;
