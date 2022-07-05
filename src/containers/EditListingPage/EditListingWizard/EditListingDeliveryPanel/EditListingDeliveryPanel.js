@@ -51,7 +51,7 @@ class EditListingDeliveryPanel extends Component {
       deliveryOptions.push('shipping');
     }
     if (pickupEnabled) {
-      deliveryOptions.push('pickup');
+      deliveryOptions.push('shipping');
     }
 
     const currency = price?.currency || config.currency;
