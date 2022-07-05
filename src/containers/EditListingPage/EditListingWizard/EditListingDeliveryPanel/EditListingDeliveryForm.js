@@ -108,7 +108,7 @@ export const EditListingDeliveryFormComponent = props => (
       const submitReady = (updated && pristine) || ready;
       const submitInProgress = updateInProgress;
       const submitDisabled =
-        invalid || disabled || submitInProgress || (!shippingEnabled && !pickupEnabled);
+        invalid || disabled || submitInProgress || (!shippingEnabled );
 
       const shippingLabel = intl.formatMessage({ id: 'EditListingDeliveryForm.shippingLabel' });
       
