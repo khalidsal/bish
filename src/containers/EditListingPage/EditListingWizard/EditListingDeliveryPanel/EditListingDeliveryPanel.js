@@ -50,9 +50,7 @@ class EditListingDeliveryPanel extends Component {
     if (shippingEnabled) {
       deliveryOptions.push('shipping');
     }
-    if (pickupEnabled) {
-      deliveryOptions.push('shipping');
-    }
+   
 
     const currency = price?.currency || config.currency;
     const shippingOneItemAsMoney = shippingPriceInSubunitsOneItem
