@@ -41,6 +41,7 @@ class EditListingDeliveryPanel extends Component {
     const { address, building } = location;
     const {
       shippingEnabled,
+      pickupEnabled,
       shippingPriceInSubunitsOneItem,
       shippingPriceInSubunitsAdditionalItems,
     } = publicData;
@@ -49,7 +50,9 @@ class EditListingDeliveryPanel extends Component {
     if (shippingEnabled) {
       deliveryOptions.push('shipping');
     }
-   
+    if (pickupEnabled) {
+      deliveryOptions.push('pickup');
+    }
 
     const currency = price?.currency || config.currency;
     const shippingOneItemAsMoney = shippingPriceInSubunitsOneItem
@@ -117,7 +120,12 @@ class EditListingDeliveryPanel extends Component {
             } = values;
 
             const shippingEnabled = deliveryOptions.includes('shipping');
-            
+            const pickupEnabled = deliveryOptions.includes('pickup');
+            const address = location?.selectedPlace?.address || null;
+            const origin = location?.selectedPlace?.origin || null;
+
+            const pickupDataMaybe =
+              pickupEnabled && address ? { location: { address, building } } : {};
 
             const shippingDataMaybe =
               shippingEnabled && shippingPriceInSubunitsOneItem
@@ -133,6 +141,8 @@ class EditListingDeliveryPanel extends Component {
             const updateValues = {
               geolocation: origin,
               publicData: {
+                pickupEnabled,
+                ...pickupDataMaybe,
                 shippingEnabled,
                 ...shippingDataMaybe,
               },
@@ -140,6 +150,7 @@ class EditListingDeliveryPanel extends Component {
             this.setState({
               initialValues: {
                 building,
+                location: { search: address, selectedPlace: { address, origin } },
                 shippingPriceInSubunitsOneItem,
                 shippingPriceInSubunitsAdditionalItems,
                 deliveryOptions,
