@@ -111,9 +111,9 @@ export const EditListingDeliveryFormComponent = props => (
         invalid || disabled || submitInProgress || (!shippingEnabled && !pickupEnabled);
 
       const shippingLabel = intl.formatMessage({ id: 'EditListingDeliveryForm.shippingLabel' });
-      const pickupLabel = intl.formatMessage({ id: 'EditListingDeliveryForm.pickupLabel' });
+      
 
-      const pickupClasses = classNames(css.deliveryOption, !pickupEnabled ? css.disabled : null);
+     
       const shippingClasses = classNames(
         css.deliveryOption,
         !shippingEnabled ? css.disabled : null
